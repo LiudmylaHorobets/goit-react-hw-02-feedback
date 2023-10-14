@@ -1,4 +1,5 @@
 import React from 'react';
+import css from './Statistics.module.css';
 
 export const Statistics = ({
   good,
@@ -7,11 +8,13 @@ export const Statistics = ({
   total,
   positivePercentage,
 }) => (
-  <div>
-    <p>Good: {good}</p>
-    <p>Neutral: {neutral}</p>
-    <p>Bad: {bad}</p>
-    <p>Total: {total}</p>
-    <p>Positive Feedback: {positivePercentage}%</p>
-  </div>
+  <ul className={css.list}>
+    <li>{`Good: ${good}`}</li>
+    <li>{`Neutral: ${neutral}`}</li>
+    <li>{`Bad: ${bad}`}</li>
+    <li>{`Total: ${total}`}</li>
+    <li>{`Positive feedback: ${
+      positivePercentage > 0 ? positivePercentage : 0
+    }%`}</li>
+  </ul>
 );
